@@ -28,19 +28,19 @@ public class BinarySearchProgram {
          Arrays.sort(arr); // sorting the array
          while( first <= last ){
              int middle = (first + last)/2;
-             if ( arr[middle] < num ){
-                  first = middle + 1;    
+             if ( arr[middle] < num ){ // If the middle element is is less than the number we are looking for, we must only search for the in the top half
+                  first = middle + 1; // We shift first 1 position up
              }
-             else if ( arr[middle] == num ){
+             else if ( arr[middle] == num ){ // If middle element is equals to number we are looking then the search is over.
                   System.out.println(num + " found at index or location " + (middle) + " of the array.");
-                  return middle ;
+                  return middle ; // We return the index on which we found the element 
                   
-             }else{
-                 last = middle - 1;
+             }else{ // If the middle element is is greater than the number we are looking for, we must only search for the in the bottom half
+                 last = middle - 1; // We shift last 1 position down
              }
          } 
          System.out.println("the key number ["+ num + "] does not belong to this array.");
-         return - 1 ;//getting to this point m eans that the element does not belong to the given array
+         return - 1 ;//getting to this point means that the element does not belong to the given array
     }
         
     // Testing the program from the main method
